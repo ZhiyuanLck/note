@@ -1,0 +1,52 @@
+\documentclass{ctexbook}
+\usepackage[margin=2cm]{geometry}
+\usepackage{import}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{shortvrb}
+\tcbuselibrary{minted}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  bookmarksopen,
+  bookmarksopenlevel=2,
+  bookmarksnumbered,
+  CJKbookmarks,
+  colorlinks,
+%   allcolors=link,
+}
+\ctexset{
+  chapter = {
+    beforeskip=0pt,
+    fixskip,
+    format=\huge\bfseries\sffamily\raggedright,
+  },
+  section/format = \Large\bfseries\sffamily\raggedright,
+  subsection/format=\large\bfseries\sffamily\raggedright,
+  subsubsection/format=\bfseries\sffamily\raggedright,
+}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\newtcblisting{mysh}[1][]{listing engine=minted,
+  minted style=colorful,
+  minted language=bash,
+  minted options={breaklines, autogobble},
+  listing only, title=#1,
+}
+
+\AtBeginDocument{\MakeShortVerb{\|}}
+
+\includeonly{
+  config/config,
+}
+
+\begin{document}
+
+\newcommand*\myinclude[1]{\includefrom{#1/}{#1}}
+\myinclude{config}
+
+\begin{mysh}
+copy a b
+\end{mysh}
+\end{document}

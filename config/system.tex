@@ -1,0 +1,34 @@
+\section{系统配置}
+
+\subsection{代理设置}
+\subsubsection{socks转http}
+安装 |proxychains4|
+\begin{mysh}[|/etc/privoxy/config|]
+  socks5 127.0.0.1 1080
+\end{mysh}
+
+\subsection{登录界面位置设置}
+ubuntu设置：
+\begin{mysh}
+sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
+sudo chown gdm:gdm ~gdm/.config/monitors.xml
+\end{mysh}
+
+\subsection{多显示器设置}
+安装 |arandr| 将布局保存，每次启动载入布局
+
+\subsection{字体配置}
+\subsubsection*{字体下载}
+\href{https://github.com/adobe-fonts/source-han-sans/raw/release/OTF/SourceHanSansSC.zip}
+{思源黑体}、
+\href{https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_EL-M.zip}
+{思源宋体1}、
+\href{https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_SB-H.zip}
+{思源宋体2}
+
+给polybar用的\href{https://unifoundry.com/pub/unifont/unifont-13.0.05/font-builds/unifont-13.0.05.ttf}
+{unifont}和\href{https://unifoundry.com/pub/unifont/unifont-13.0.05/font-builds/unifont-13.0.05.ttf}
+{siji}
+
+\subsubsection*{字体优先级设置}
+修改文件 |/etc/fonts/conf.avail/64-language-selector-prefer.conf|
