@@ -8,7 +8,7 @@
 - 算术类型包含哪两类 (P.30)
 - 字符和布尔类型也是整型吗 (P.30)
 - 浮点数有效位是什么? `float`和`double`有效位一般是多少 (P.31)
-  - [浮点数底层是怎么存储和表示的](grammer/record/floating_point_number.md)
+  - [浮点数底层是怎么存储和表示的](record/floating_point_number.md)
 - 字符型有几种类型？表现形式有几种？(P.32)
 - 类型转换 (P.33)
   - 布尔值与非布尔值转换

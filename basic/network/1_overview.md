@@ -19,7 +19,7 @@
 - 物理媒体有哪几类 (P.14)
 - 报文的简单定义 (P.16)
 - 分组的简单定义 (P.16)
-- [存储转发传输(store-and-forward transmission)](basic/network/record/1_store_and_forward_transmission.md) (P.16)
+- [存储转发传输(store-and-forward transmission)](record/1_store_and_forward_transmission.md) (P.16)
   - 定义 (P.17)
   - 起源
   - 应用场景
