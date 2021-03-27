@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/zhiyuan/daily/note/computer_system/basic/code/endian/build",
+  "command": "/usr/bin/c++   -I/home/zhiyuan/daily/note/computer_system/basic/code/endian/../include    -g -Wall -O2 -std=c++17 -std=gnu++17 -o CMakeFiles/endian.out.dir/endian.cpp.o -c /home/zhiyuan/daily/note/computer_system/basic/code/endian/endian.cpp",
+  "file": "/home/zhiyuan/daily/note/computer_system/basic/code/endian/endian.cpp"
+}
+]
