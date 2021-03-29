@@ -15,3 +15,38 @@
 `mutable`说明符的作用是容许在即便包含它的对象被声明为`const`时仍可修改。C++ 语言文法把`mutable`当做存储类说明符而非类型限定符，但它**不影响存储类或连接**。
 
 到 cv 限定类型的引用和指针能被隐式转换到更多 cv 限定的类型的引用和指针，欲将到 cv 限定类型的引用或指针转换为到更少 cv 限定类型的引用或指针，必须使用 `const_cast`
+
+## `const`
+
+[示例代码](../code/show_symbols/const.cpp)
+
+```cpp
+const          int gc   = 1; // LOCAL  .rodata
+extern const   int gec  = 1; // GLOBAL .rodata
+const volatile int gecv = 1; // GLOBAL .rodata(clang++) .data(gcc)
+inline const   int gic  = 1;
+extern const   int gecn;
+
+int main() {
+  const int lc = 1;
+  static const int lsc = 1;  // LOCAL  .rodata
+}
+```
+
+符号表中除了`main`只有五个符号，下面是`nm a.o`的输出结果
+
+```
+0000000000000004 R gec
+0000000000000000 D gecv
+0000000000000000 T main
+0000000000000000 r _ZL2gc
+0000000000000008 r _ZZ4mainE3lsc
+```
+
+- `const`变量的值一般被存放在`.rodata`(只读数据段)中，除了`const volatile`限定的非`static`变量在 gcc 中会被放到`.data`段。
+- 在顶层命名空间作用域中声明的非`extern`的`const`变量（`gc`）具有**内部连接**（在C中具有外部连接），使用`extern`限定的才有外部连接。
+- `extern const int gecn`是声明而非定义
+- 局部`const`变量（`lc`）是无连接的，且存储期为自动存储期，不显示在符号表中
+- 静态局部`const`变量具有内部连接和静态存储期
+
+**const限定的成员和成员函数，待补充**
