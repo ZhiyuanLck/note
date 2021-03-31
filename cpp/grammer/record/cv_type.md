@@ -24,7 +24,7 @@
 const          int gc   = 1; // LOCAL  .rodata
 extern const   int gec  = 1; // GLOBAL .rodata
 const volatile int gecv = 1; // GLOBAL .rodata(clang++) .data(gcc)
-inline const   int gic  = 1;
+inline const   int gic  = 1; // 外部连接，此处符号表中未显示
 extern const   int gecn;
 
 int main() {
